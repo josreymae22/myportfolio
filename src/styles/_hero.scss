@@ -1,0 +1,54 @@
+.hero-section {
+    width: 100%;
+    padding: 10em 5%;
+    background-image: url(../assets/images/about-us-4-bg.png);
+    z-index: 1;
+
+    h1.hero-heading {
+    color: #111013;
+    font-size: 100px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 50px;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+
+       .hero-heading-subtle
+    {
+        font-size: 60px;
+        font-weight: 600;
+    }
+    }
+    .hero-description{
+        z-index: 99;
+    }
+    
+.label.justify-content-end {
+        position: absolute;
+    bottom: -50px;
+    opacity: 0.1;
+    z-index: -1;
+
+}
+span.tp-section-subtitle {
+font-size: 13em;
+    font-weight: 900;
+    color: #33333361;
+}
+
+
+    @media (min-width: 1400px) {
+    .container-hero {
+        max-width: 1230px;
+    }
+}
+}
+
+.text-trail {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background: transparent;
+    top: 0;
+}

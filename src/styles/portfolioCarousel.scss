@@ -1,0 +1,126 @@
+.portfolio-carousel {
+  background: #0d0d0d;
+  color: #fff;
+  padding: 4rem 2rem;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+
+  .header {
+    display: block;
+    margin-bottom: 3rem;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h2 {
+      color: white;
+
+      .highlight {
+        position: relative;
+        color: #fff;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 0.3rem;
+          width: 100%;
+          background: #ccff00;
+          z-index: -1;
+          transform: translateY(0.3rem);
+        }
+      }
+    }
+
+    p {
+      color: #aaa;
+      font-size: 0.95rem;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      align-items: center;
+    justify-content: center;
+
+      button {
+        background: none;
+        border: 1px solid #555;
+        color: #fff;
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: #ccff00;
+          color: #000;
+        }
+      }
+    }
+  }
+
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+  }
+
+  .carousel-slide {
+    flex: 0 0 60%;
+    margin: 0 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    img.carousel-image {
+      width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      object-fit: cover;
+    }
+  }
+
+  .carousel-text {
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 1000px;
+
+    h3 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    span {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #ccc;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+}
