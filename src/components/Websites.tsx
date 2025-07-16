@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Project1 from "../assets/images/project-1.jpg";
 import Project2 from "../assets/images/project-2.jpg";
@@ -48,6 +48,17 @@ const PortfolioCarousel = () => {
     );
   };
 
+  const [slideWidth, setSlideWidth] = useState(100);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSlideWidth(window.innerWidth < 1025 ? 100 : 64);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section className="portfolio-carousel">
       <div className="header">
@@ -67,7 +78,7 @@ const PortfolioCarousel = () => {
       <div className="carousel-container">
         <div
           className="carousel-track"
-          style={{ transform: `translateX(-${currentIndex * 64}%)` }}
+          style={{ transform: `translateX(-${currentIndex * slideWidth}%)` }}
         >
           {portfolioData.map((item, index) => (
             <div className="carousel-slide" key={item.title}>
