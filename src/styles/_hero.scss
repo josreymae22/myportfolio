@@ -4,18 +4,26 @@
     background-image: url(../assets/images/about-us-4-bg.png);
     z-index: 1;
 
+
+    @media only screen and (min-width:768px){
+            h1.hero-heading {
+                font-size: 100px;
+                .hero-heading-subtle{
+                    font-size: 60px;    
+                }
+            }
+    }
     h1.hero-heading {
     color: #111013;
-    font-size: 100px;
     font-weight: 900;
     line-height: 1;
     margin-bottom: 50px;
     letter-spacing: -4px;
     text-transform: uppercase;
 
+
        .hero-heading-subtle
     {
-        font-size: 60px;
         font-weight: 600;
     }
     }
@@ -52,3 +60,14 @@ font-size: 13em;
     background: transparent;
     top: 0;
 }
+
+ @media only screen and (max-width:768px){
+    h1.hero-heading {
+        font-size:4rem;
+
+        .hero-heading-subtle{
+                    font-size: 3rem;    
+                }
+    }
+
+    }

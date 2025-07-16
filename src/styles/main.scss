@@ -6,9 +6,11 @@
 
 
 html, body{
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-      margin: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
 
       h1 {
         font-size: clamp(2.5rem, 6vw, 4rem);
@@ -31,6 +33,10 @@ html, body{
       h5 {
         font-size: clamp(1rem, 2.5vw, 1.5rem);
       }
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 .container {
@@ -80,7 +86,7 @@ html, body{
     .back-to-top-btn{
       position: fixed;
       bottom: 33px;
-      right: 10px;
+      right: 25px;
       padding: 10px 10px;
       font-weight: bold;
       font-size: 2rem;

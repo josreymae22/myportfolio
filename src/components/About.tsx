@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import "../styles/_about.scss";
 import { FiPhoneCall, FiMail, FiMapPin } from "react-icons/fi";
 import photo from "../assets/images/your-photo.jpg";
@@ -29,6 +30,16 @@ const icons = [
 ];
 
 const About = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const totalItems = icons.length;
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % totalItems);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + totalItems) % totalItems);
+  };
   const textItems = [
     "Work Experiences",
     "Work Experiences",
@@ -70,8 +81,26 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            LANGUAGES/PLATFORMS THAT I USE
+            LANGUAGES OR PLATFORMS THAT I USE
           </motion.h2>
+        </div>
+        <div className="carousel-wrapper">
+          <motion.div
+            className="carousel-track"
+            animate={{ x: `-${currentIndex * (100 / icons.length)}%` }}
+            transition={{ duration: 0.5 }}
+          >
+            {icons.map((Icon, idx) => (
+              <div className="carousel-slide" key={idx}>
+                <div className="bubble-icon">{Icon}</div>
+              </div>
+            ))}
+          </motion.div>
+
+          <div className="carousel-controls">
+            <button onClick={handlePrev}>←</button>
+            <button onClick={handleNext}>→</button>
+          </div>
         </div>
       </section>
       {/* About Me Section */}
